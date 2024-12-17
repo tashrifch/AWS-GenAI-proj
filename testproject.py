@@ -8,7 +8,7 @@ import os
 
 # Initialize OpenAI API Key
 client = OpenAI(
-    api_key=os.getenv("OPENAI_API_KEY")
+    api_key=os.getenv("OPENAI_API_KEY") #Set your enviorment variable
 )
 
 
@@ -34,8 +34,8 @@ def process_pdfs(bucket_name):
     s3 = boto3.resource(
         service_name="s3",
         region_name="us-east-2",
-        aws_access_key_id=os.getenv('AWS_ACCESS_KEY_ID'),  # Replace with your access key
-        aws_secret_access_key=os.getenv('AWS_SECRET_KEY') # Replace with your secret key
+        aws_access_key_id=os.getenv('AWS_ACCESS_KEY_ID'),  # Set your enviorment variable
+        aws_secret_access_key=os.getenv('AWS_SECRET_KEY') # Set your enviorment variable
     )
     bucket = s3.Bucket(bucket_name)
 
